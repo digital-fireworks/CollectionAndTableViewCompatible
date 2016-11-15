@@ -14,6 +14,8 @@ The create a `UITableViewCell` subclass that conforms to the `Configurable` prot
 
 Finally create a class or struct that conforms to the `TableViewSection` protocol and let your `UITableViewDataSource` data model be an array of `TableViewSection`. 
 
+For a more detailed explaination see this [blog post](https://blog.jayway.com/2016/11/15/clean-table-view-code-using-swift-protocols/)
+
 ## Xcode snippets
 To do all this really fast, cpoy the two .codesnippet files in to the Xcode code snippet folder found here:
 `~/Library/Developer/Xcode/UserData/CodeSnippets/`. Restart Xcode and type `cell` or `datasource` in top level scope to autocomplete the snippets. 
