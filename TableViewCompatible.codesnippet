@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class &lt;#Cell#&gt;:UITableViewCell, Configurable {
+    
+    var model: &lt;#CellModel#&gt;?
+    
+    func configureWithModel(_ model: &lt;#CellModel#&gt;) {
+        self.model = model
+    }
+    
+}
+
+class &lt;#CellModel#&gt;: TableViewCompatible {
+    
+    var reuseIdentifier: String {
+        return &lt;#ReuseIdentifier#&gt;
+    }
+    
+    func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -&gt; UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1199C9A6-579B-4A6F-AB7C-4EB54A920798</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Configurable and TableViewCompatible</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
