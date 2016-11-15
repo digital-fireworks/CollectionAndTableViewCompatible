@@ -16,6 +16,6 @@ Finally create a class or struct that conforms to the `TableViewSection` protoco
 
 # Xcode snippets
 To do all this really fast, import the two .codesnippet files in the Xcode code snippet folder found here:
-`~/Library/Developer/Xcode/UserData/CodeSnippets/`.
+`~/Library/Developer/Xcode/UserData/CodeSnippets/`. Type `cell` or `datasource` in top level scope to autocomplete the snippets. 
 
 That's all folks. Thanks for listening.
