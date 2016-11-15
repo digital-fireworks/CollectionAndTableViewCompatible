@@ -1,7 +1,7 @@
 # TableViewCompatible
 A set of Swift protocols and Xcode snippets that will make it easy to do clean UITableView code.
 
-# How to use
+## How to use
 The project consists of three protocols:
 
 - `TableViewCompatible`
@@ -14,7 +14,7 @@ The create a `UITableViewCell` subclass that conforms to the `Configurable` prot
 
 Finally create a class or struct that conforms to the `TableViewSection` protocol and let your `UITableViewDataSource` data model be an array of `TableViewSection`. 
 
-# Xcode snippets
+## Xcode snippets
 To do all this really fast, import the two .codesnippet files in the Xcode code snippet folder found here:
 `~/Library/Developer/Xcode/UserData/CodeSnippets/`. Type `cell` or `datasource` in top level scope to autocomplete the snippets. 
 
