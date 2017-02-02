@@ -3,33 +3,23 @@
 //  TableViewCompatible
 //
 //  Created by Fredrik Nannestad on 24/10/2016.
+//  Copyright © 2016 Fredrik Nannestad. All rights reserved.
 //
-//  Licensed to the Apache Software Foundation (ASF) under one
-//  or more contributor license agreements.  See the NOTICE file
-//  distributed with this work for additional information
-//  regarding copyright ownership.  The ASF licenses this file
-//  to you under the Apache License, Version 2.0 (the
-//  "License"); you may not use this file except in compliance
-//  with the License.  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing,
-//  software distributed under the License is distributed on an
-//  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-//  KIND, either express or implied.  See the License for the
-//  specific language governing permissions and limitations
-//  under the License.
 
 import Foundation
 
-protocol TableViewSection {
+class TableViewSection {
     
-    var sortOrder: Int { get set }
-    var items: [TableViewCompatible] { get set }
-    var headerTitle: String? { get set }
-    var footerTitle: String? { get set }
+    var sortOrder: Int
+    var items: [TableViewCompatible]
+    var headerTitle: String?
+    var footerTitle: String?
     
-    init(sortOrder: Int, items: [TableViewCompatible], headerTitle: String?, footerTitle: String?)
+    init(sortOrder: Int, items: [TableViewCompatible], headerTitle: String? = nil, footerTitle: String? = nil) {
+        self.sortOrder = sortOrder
+        self.items = items
+        self.headerTitle = headerTitle
+        self.footerTitle = footerTitle
+    }
     
 }
