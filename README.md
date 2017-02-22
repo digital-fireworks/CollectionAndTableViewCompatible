@@ -12,8 +12,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-Swift3
-Xcode8
+- `Swift3`
+- `iOS 8+`
+- `Xcode8`
 
 ## Installation
 
@@ -31,19 +32,19 @@ The project consists of three protocols:
 - `Configurable`
 - `TableViewSection`
 
-Create a view model that conforms to the `TableViewCompatible` protocol. The view model could either be a separate class or an extension to your existing model obejct. Your choice. 
+Create a view model that conforms to the `TableViewCompatible` protocol. The view model could either be a separate class or an extension to your existing model obejct. Your choice.
 
 The create a `UITableViewCell` subclass that conforms to the `Configurable` protocol. Make the function `configureWithModel` take an instance of your view model as parameter.
 
-Finally create a class or struct that conforms to the `TableViewSection` protocol and let your `UITableViewDataSource` data model be an array of `TableViewSection`. 
+Finally create a class or struct that conforms to the `TableViewSection` protocol and let your `UITableViewDataSource` data model be an array of `TableViewSection`.
 
 For a more detailed explaination see this [blog post](https://blog.jayway.com/2016/11/15/clean-table-view-code-using-swift-protocols/)
 
 
 ## Author
 
-Fredrik Nannestad, fredrik.nannestad@jayway.com
-Jimmie Jensen, jimmie.jensen@jayway.com
+- `Fredrik Nannestad, fredrik.nannestad@jayway.com - Main author`
+- `Jimmie Jensen, jimmie.jensen@jayway.com - Contributer`
 
 ## License
 
