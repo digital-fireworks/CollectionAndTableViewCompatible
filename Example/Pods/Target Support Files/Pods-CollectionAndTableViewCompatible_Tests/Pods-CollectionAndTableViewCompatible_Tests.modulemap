@@ -1,0 +1,6 @@
+framework module Pods_CollectionAndTableViewCompatible_Tests {
+  umbrella header "Pods-CollectionAndTableViewCompatible_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
