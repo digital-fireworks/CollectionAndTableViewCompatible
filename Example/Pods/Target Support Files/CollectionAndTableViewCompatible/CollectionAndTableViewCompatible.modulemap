@@ -1,0 +1,6 @@
+framework module CollectionAndTableViewCompatible {
+  umbrella header "CollectionAndTableViewCompatible-umbrella.h"
+
+  export *
+  module * { export * }
+}

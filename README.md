@@ -1,5 +1,28 @@
-# TableViewCompatible
-A set of Swift protocols and Xcode snippets that will make it easy to do clean UITableView code.
+# CollectionAndTableViewCompatible
+
+[![Version](https://img.shields.io/cocoapods/v/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
+[![License](https://img.shields.io/cocoapods/l/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
+[![Platform](https://img.shields.io/cocoapods/p/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
+
+A set of Swift protocols and Xcode snippets that will make it easy to do clean UICollectionView and UITableView code.
+
+## Example project
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+Swift3
+Xcode8
+
+## Installation
+
+CollectionAndTableViewCompatible is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "CollectionAndTableViewCompatible"
+```
 
 ## How to use
 The project consists of three protocols:
@@ -16,8 +39,12 @@ Finally create a class or struct that conforms to the `TableViewSection` protoco
 
 For a more detailed explaination see this [blog post](https://blog.jayway.com/2016/11/15/clean-table-view-code-using-swift-protocols/)
 
-## Xcode snippets
-To do all this really fast, cpoy the two .codesnippet files in to the Xcode code snippet folder found here:
-`~/Library/Developer/Xcode/UserData/CodeSnippets/`. Restart Xcode and type `cell` or `datasource` in top level scope to autocomplete the snippets. 
 
-That's all folks. Thanks for listening.
+## Author
+
+Fredrik Nannestad, fredrik.nannestad@jayway.com
+Jimmie Jensen, jimmie.jensen@jayway.com
+
+## License
+
+CollectionAndTableViewCompatible is available under the Apache License Version 2.0. See the LICENSE file for more info.

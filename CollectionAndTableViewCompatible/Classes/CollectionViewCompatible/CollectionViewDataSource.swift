@@ -17,7 +17,9 @@ class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDa
         self.collectionView = collectionView
         super.init()
         collectionView.dataSource = self
-        collectionView.prefetchDataSource = self
+        if #available(iOS 10.0, *) {
+            collectionView.prefetchDataSource = self
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -17,7 +17,9 @@ class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
         self.tableView = tableView
         super.init()
         tableView.dataSource = self
-        tableView.prefetchDataSource = self
+        if #available(iOS 10.0, *) {
+            tableView.prefetchDataSource = self
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

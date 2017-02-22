@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CollectionAndTableViewCompatible_Example' do
+  pod 'CollectionAndTableViewCompatible', :path => '../'
+
+  target 'CollectionAndTableViewCompatible_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
