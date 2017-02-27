@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CollectionAndTableViewCompatible'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A set of Swift protocols and Xcode snippets that will make it easy to do clean UICollectionView and UITableView code.'
 
 # This description is used to generate tags and improve search results.
@@ -36,9 +36,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Apache Version 2.0', :file => 'LICENSE' }
   s.author           = { 'Jimmie Jensen' => 'jimmie.jensen@jayway.com' }
   s.source           = { :git => 'https://github.com/jayway/CollectionAndTableViewCompatible.git', :tag => s.version.to_s }
-  
+
   s.ios.deployment_target = '8.0'
-  s.source_files = 'Classes/**'
+  s.source_files = 'Classes/**/*'
   s.frameworks = 'UIKit'
-   
+
 end
