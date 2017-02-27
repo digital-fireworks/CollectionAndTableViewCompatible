@@ -36,17 +36,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Apache Version 2.0', :file => 'LICENSE' }
   s.author           = { 'Jimmie Jensen' => 'jimmie.jensen@jayway.com' }
   s.source           = { :git => 'https://github.com/jayway/CollectionAndTableViewCompatible.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/jayway'
-
+  
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'CollectionAndTableViewCompatible/Classes/**/*'
-
-  # s.resource_bundles = {
-  #   'CollectionAndTableViewCompatible' => ['CollectionAndTableViewCompatible/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'Classes/**'
+  s.frameworks = 'UIKit'
+   
 end
