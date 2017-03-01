@@ -25,7 +25,13 @@ If you are using Cocoapods you can run the example project by ading the pod (see
 
 ### Git submodule
 
-Add this project as a git submodule by running `git submodule add https://github.com/jayway/CollectionAndTableViewCompatible.git` from the root of you existing git repo. When the submodule is cloned, add the files contained in the Classes folder to your Xcode project (make sure "Copy if needed" is unchecked).
+Add this project as a git submodule by running the following command from the root of you existing git repo:
+
+```shell
+git submodule add https://github.com/jayway/CollectionAndTableViewCompatible.git
+```
+
+When the submodule is cloned, add the files contained in the Classes folder to your Xcode project (make sure "Copy if needed" is unchecked).
 
 ### CocoaPods
 
