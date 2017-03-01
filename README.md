@@ -38,21 +38,21 @@ pod "CollectionAndTableViewCompatible"
 
 ## How to use
 
-### UITableView
+The project is designed for use in a storyboard based application using prototype cells. For now, if you are using nibs or you are creating UI entirely in code you will have to manually register nibs or classes to you table/collection view.
 
-For table views you need to do the following:
+The idea here, is to let your model object conform to either `TableViewCompatible` or `CollectionViewCompatible` or both and then provide cell implementations that conforms to the `Configurable` protocol for a table/collection view: 
 
-- Make your model object conform to the `TableViewCompatible` protocol. 
-- Create a `UITableViewCell` subclass and let it conform to the `Configurable` protocol. The `model` property type should be the type of your model object. 
-- Create a subclass of `TableViewDataSource` and initialize it by calling `init(tableView: UITableView)`.
-- Initialize the `sections` property of you data source instance by providing `TableViewSection` instancies containing your model objects.
-- Call `reloadData()` on you table view.
+- Make your model object conform to the `TableViewCompatible` and/or `CollectionViewCompatible` protocol. 
+- Create a `UITableViewCell` and/or `UIColllectionViewCell` subclass and let them conform to the `Configurable` protocol. The `model` property type should be the type of your model object. 
+- Create a subclass of `TableViewDataSource` and/or `CollectionViewDataSource` and initialize it by calling `init(tableView: UITableView)` and/or `init(collectionView: UICollectionView)`.
+- Initialize the `sections` property of you data source instance by providing `TableViewSection`/`CollectionViewSection` instances containing your model objects.
+- Call `reloadData()` on you table/collection view.
 
-You are now free to add, remove and reorder sections and cells simply by modifying the `sections` property of your `TableViewDataSource` and calling `reloadData()` on you table view.
+You are now free to add, remove and reorder sections and cells simply by modifying the `sections` property of your data source and calling `reloadData()` on the table/collection view.
 
-To make your cells movable of editiable, simply provide a value for the `movable` and `editable` properties of your `TableViewCompatible` model object.
+To make your cells movable of editiable, simply provide a value for the `movable` and `editable` properties of your `TableViewCompatible`/`CollectionViewCompatible` model object.
 
-Below is an example of how the `TableViewCompatible` and `Configurable` interacts when implemented:
+Below is an example of how the `TableViewCompatible`/`CollectionViewCompatible` and `Configurable` interacts when implemented:
 
 ```swift
 class MyTableCell: UITableViewCell, Configurable {
@@ -61,31 +61,51 @@ class MyTableCell: UITableViewCell, Configurable {
 
     func configureWithModel(_ model: MyCellModel) {
         self.model = model
-        titleLable.text = model.title
+        titleLabel.text = model.title
     }
+
 }
 
-class MyCellModel: TableViewCompatible {
+class MyCollectionCell: UICollectionViewCell, Configurable {
+
+    @IBOutlet weak var titleLabel: UILabel!
+
+    var model: MyCellModel?
+
+    func configureWithModel(_ model: MyCellModel) {
+        self.model = model
+        titleLabel.text = model.title
+    }
+
+}
+
+class MyCellModel: TableViewCompatible, CollectionViewCompatible {
 
     // Your custom properties
     var title: String = "Some title"
 
-    // TableViewCompatible conformance
+    // TableViewCompatible/CollectionViewCompatible conformance
     var reuseIdentifier: String = "MyCellIdentifier"
     var selected: Bool = false
     var editable: Bool = true
     var movable: Bool = true
 
+    // TableViewCompatible
     func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MyTableCell
         cell.configureWithModel(self)
         return cell
     }
 
+    // CollectionViewCompatible
+    func cellForCollectionView(collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCollectionCell
+        cell.configureWithModel(self)
+        return cell
+    }
+
 }
 ```
-
-### UICollectionView
 
 ## Author
 
