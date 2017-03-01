@@ -1,5 +1,5 @@
 PODS:
-  - CollectionAndTableViewCompatible (0.1.0)
+  - CollectionAndTableViewCompatible (0.1.1)
 
 DEPENDENCIES:
   - CollectionAndTableViewCompatible (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CollectionAndTableViewCompatible: 0346a5fe3288f8ef19834088e4057eca6201ec4f
+  CollectionAndTableViewCompatible: a911213a37e8b20e49e377cdcfafa51dac2737e4
 
 PODFILE CHECKSUM: 90c229e6f8a2cd16205534cc43af2d406164297f
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.1.1
