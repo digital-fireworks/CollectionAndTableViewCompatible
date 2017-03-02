@@ -35,7 +35,7 @@ Finally it provides a few other protocols that enables support for the display c
 You can find an example project demonstrating the use of `CollectionAndTableViewCompatible` [here](https://github.com/jayway/CollectionAndTableViewCompatibleExample).
 
 ### CocoaPods
-If you are using CocoaPods you can run the example project by ading the pod (see below) and running `pod install` from the Example directory.
+If you are using CocoaPods you can run the example project by adding the pod (see below) and running `pod install` from the Example directory.
 
 ## Requirements
 
