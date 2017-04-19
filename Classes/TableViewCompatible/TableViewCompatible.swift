@@ -17,6 +17,6 @@ public protocol TableViewCompatible: CollectionAndTableViewCompatible {
     /// Call this from your `UITableViewDataSource` and return a fully configured `UITableViewCell`. If your cells conforms to the `Configurable` protocol, you can call `configureWithModel(_: T)` with `self` as parameter in your implementation.
     /// parameter tableView: a table view requesting the cell.
     /// parameter indexPath: an index path locating the row in the table view.
-    public func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell
+    func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell
 
 }
