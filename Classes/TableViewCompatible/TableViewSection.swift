@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class TableViewSection {
+open class TableViewSection {
     
-    public var sortOrder: Int
-    public var items: [TableViewCompatible]
-    public var headerTitle: String?
-    public var footerTitle: String?
+    open var sortOrder: Int
+    open var items: [TableViewCompatible]
+    open var headerTitle: String?
+    open var footerTitle: String?
     
     public init(sortOrder: Int, items: [TableViewCompatible], headerTitle: String? = nil, footerTitle: String? = nil) {
         self.sortOrder = sortOrder
