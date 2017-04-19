@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class CollectionViewSection: NSObject {
+open class CollectionViewSection: NSObject {
     
-    public var sortOrder: Int
-    public var items: [CollectionViewCompatible]
+    open var sortOrder: Int
+    open var items: [CollectionViewCompatible]
     
     public init(sortOrder: Int, items: [CollectionViewCompatible]) {
         self.sortOrder = sortOrder

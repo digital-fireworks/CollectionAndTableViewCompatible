@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
+open class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
 
-    public let tableView: UITableView
-    public var sections: [TableViewSection] = []
+    open let tableView: UITableView
+    open var sections: [TableViewSection] = []
     
     public init(tableView: UITableView) {
         self.tableView = tableView
@@ -22,37 +22,37 @@ public class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource
         }
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.numberOfRowsInSection(section: section)
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return self.cellForTableView(tableView: tableView, atIndexPath: indexPath)
     }
     
     // Optional
     
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return self.numberOfSections()
     }
     
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.titleForHeaderInSection(section: section)
     }
     
-    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return self.titleForFooterInSection(section: section)
     }
     
-    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return self[indexPath].editable
     }
     
-    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return self[indexPath].movable
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         // If you need to update a deeper model, ie. a database or similar, or you need to support insertion, you probably want to provide your own implementation of this function.
         
@@ -68,7 +68,7 @@ public class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource
         }
     }
     
-    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         // If you need to update a deeper model, ie. a database or similar, you probably want to provide your own implementation of this function.
         
@@ -76,11 +76,11 @@ public class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource
         self.sections[destinationIndexPath.section].items.insert(item, at: destinationIndexPath.row)
     }
     
-    public func insertItem(atIndexPath indexPath: IndexPath) {
+    open func insertItem(atIndexPath indexPath: IndexPath) {
         // Override in subclass if needed
     }
     
-    public func deleteItem(atIndexPath indexPath: IndexPath) {
+    open func deleteItem(atIndexPath indexPath: IndexPath) {
         self.sections[indexPath.section].items.remove(at: indexPath.row)
     }
     
@@ -88,11 +88,11 @@ public class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource
 
 extension TableViewDataSource: UITableViewDataSourcePrefetching {
     
-    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    open func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         self.prefetchObjectsAtIndexPaths(indexPaths: indexPaths)
     }
     
-    public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+    open func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         self.cancelPrefetchingObjectsAtIndexPaths(indexPaths: indexPaths)
     }
     
@@ -100,7 +100,7 @@ extension TableViewDataSource: UITableViewDataSourcePrefetching {
 
 extension TableViewDataSource: UITableViewDelegate {
     
-    public func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+    open func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         
         // We need to check if the proposedDestinationIndexPath is out of bounds. This will happen when moving a cell past the last cell in the table view.
         
