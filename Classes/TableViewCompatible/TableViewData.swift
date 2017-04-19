@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TableViewData {
+public protocol TableViewData {
     
     var sections: [TableViewSection] { get set }
     
@@ -27,9 +27,9 @@ protocol TableViewData {
 }
 
 // Default implementations
-extension TableViewData {
+public extension TableViewData {
     
-    subscript(indexPath: IndexPath) -> TableViewCompatible {
+    public subscript(indexPath: IndexPath) -> TableViewCompatible {
         get {
             return sections[indexPath.section].items[indexPath.row]
         }
@@ -39,34 +39,34 @@ extension TableViewData {
         }
     }
     
-    func numberOfSections() -> Int {
+    public func numberOfSections() -> Int {
         return sections.count
     }
     
-    func numberOfRowsInSection(section: Int) -> Int {
+    public func numberOfRowsInSection(section: Int) -> Int {
         return sections[section].items.count
     }
     
-    func titleForHeaderInSection(section: Int) -> String? {
+    public func titleForHeaderInSection(section: Int) -> String? {
         return sections[section].headerTitle
     }
     
-    func titleForFooterInSection(section: Int) -> String? {
+    public func titleForFooterInSection(section: Int) -> String? {
         return sections[section].footerTitle
     }
     
-    func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
+    public func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         let model = self[indexPath]
         return model.cellForTableView(tableView: tableView, atIndexPath: indexPath)
     }
     
-    func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+    public func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             self[indexPath].prefetch()
         }
     }
     
-    func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+    public func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if self.sections.count < indexPath.section && self.sections[indexPath.section].items.count < indexPath.row {
                 self[indexPath].cancelPrefetch()

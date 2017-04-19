@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDataSource {
+public class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDataSource {
     
-    let collectionView: UICollectionView
-    var sections: [CollectionViewSection] = []
+    public let collectionView: UICollectionView
+    public var sections: [CollectionViewSection] = []
     
-    init(collectionView: UICollectionView) {
+    public init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
         collectionView.dataSource = self
@@ -22,23 +22,23 @@ class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDa
         }
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.numberOfItemsInSection(section: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return self.cell(forCollectionView: collectionView, atIndexPath: indexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return self[indexPath].movable
     }
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         self.moveItem(atIndexPath: sourceIndexPath, toIndexPath: destinationIndexPath)
     }
 
@@ -46,12 +46,12 @@ class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDa
 
 extension CollectionViewDataSource: UICollectionViewDataSourcePrefetching {
     
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+    public func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         self.prefetchObjectsAtIndexPaths(indexPaths: indexPaths)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+    public func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
         self.cancelPrefetchingObjectsAtIndexPaths(indexPaths: indexPaths)
     }
-    
+
 }

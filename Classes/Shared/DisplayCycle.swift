@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DisplayCycle {
+public protocol DisplayCycle {
     
     func willDisplay()
     
@@ -18,16 +18,16 @@ protocol DisplayCycle {
 
 extension UITableViewCell: DisplayCycle {
     
-    func willDisplay() { }
+    public func willDisplay() { }
     
-    func didEndDisplay() { }
+    public func didEndDisplay() { }
     
 }
 
 extension UICollectionViewCell: DisplayCycle {
     
-    func willDisplay() { }
+    public func willDisplay() { }
     
-    func didEndDisplay() { }
+    public func didEndDisplay() { }
     
 }

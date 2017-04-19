@@ -11,7 +11,7 @@ import UIKit
 /**
  Let your (view) model object conform to this protocol to make it compatible with a `UICollectionViewView`
  */
-protocol CollectionViewCompatible: CollectionAndTableViewCompatible {
+public protocol CollectionViewCompatible: CollectionAndTableViewCompatible {
     
     func cellForCollectionView(collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> UICollectionViewCell
     

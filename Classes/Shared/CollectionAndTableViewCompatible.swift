@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CollectionAndTableViewCompatible {
+public protocol CollectionAndTableViewCompatible {
     
     var reuseIdentifier: String { get }
     
@@ -22,17 +22,17 @@ protocol CollectionAndTableViewCompatible {
 }
 
 // Default implementations
-extension CollectionAndTableViewCompatible {
+public extension CollectionAndTableViewCompatible {
     
-    var editable: Bool {
+    public var editable: Bool {
         return false
     }
     
-    var movable: Bool {
+    public var movable: Bool {
         return false
     }
     
-    func prefetch() { }
-    func cancelPrefetch() { }
+    public func prefetch() { }
+    public func cancelPrefetch() { }
     
 }

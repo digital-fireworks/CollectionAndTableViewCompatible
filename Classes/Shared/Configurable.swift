@@ -11,7 +11,7 @@ import Foundation
 /**
  Let your `UICollectionViewCell` or `UITableViewCell` conform to this protocol.
  */
-protocol Configurable {
+public protocol Configurable {
     
     associatedtype T
     var model: T? { get set }

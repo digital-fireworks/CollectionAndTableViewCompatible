@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol ChangeNotifier {
+public protocol ChangeNotifier {
     weak var changeListener: ChangeListener? { get set }
 }
 
-protocol ChangeListener: class {
+public protocol ChangeListener: class {
     func notify(notifier: ChangeNotifier)
 }
