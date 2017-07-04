@@ -15,6 +15,6 @@ public protocol Configurable {
     
     associatedtype T
     var model: T? { get set }
-    func configureWithModel(_: T)
+    func configure(withModel model: T)
     
 }
