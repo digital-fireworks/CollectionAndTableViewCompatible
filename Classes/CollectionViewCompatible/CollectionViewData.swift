@@ -72,7 +72,7 @@ public extension CollectionViewData {
     
     public func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if self.sections.count < indexPath.section && self.sections[indexPath.section].items.count < indexPath.row {
+            if indexPath.section < self.sections.count && indexPath.row < self.sections[indexPath.section].items.count {
                 self[indexPath].cancelPrefetch()
             }
         }
