@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ChangeNotifier {
-    weak var changeListener: ChangeListener? { get set }
+    var changeListener: ChangeListener? { get set }
 }
 
 public protocol ChangeListener: class {
