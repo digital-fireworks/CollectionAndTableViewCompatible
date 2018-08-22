@@ -10,7 +10,7 @@ import UIKit
 
 open class CollectionViewDataSource: NSObject, CollectionViewData, UICollectionViewDataSource {
     
-    open let collectionView: UICollectionView
+    public let collectionView: UICollectionView
     open var sections: [CollectionViewSection] = []
     
     public init(collectionView: UICollectionView) {
