@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CollectionAndTableViewCompatible'
-  s.version          = '0.1.4'
+  s.version          = '0.2.0'
   s.summary          = 'A set of Swift protocols and Xcode snippets that will make it easy to do clean UICollectionView and UITableView code.'
 
 # This description is used to generate tags and improve search results.
