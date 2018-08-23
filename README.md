@@ -39,9 +39,11 @@ If you are using CocoaPods you can run the example project by adding the pod (se
 
 ## Requirements
 
-- `Swift3`
+- `Swift4`
 - `iOS 8+`
 - `Xcode8`
+
+- `Swift3` is supported on older branches/pods.
 
 ## Installation
 
