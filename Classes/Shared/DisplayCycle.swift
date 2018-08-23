@@ -16,14 +16,16 @@ public protocol DisplayCycle {
     
 }
 
+@objc
 extension UITableViewCell: DisplayCycle {
-    
+
     public func willDisplay() { }
     
     public func didEndDisplay() { }
     
 }
 
+@objc
 extension UICollectionViewCell: DisplayCycle {
     
     public func willDisplay() { }
