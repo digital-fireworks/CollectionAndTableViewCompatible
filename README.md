@@ -43,7 +43,10 @@ If you are using CocoaPods you can run the example project by adding the pod (se
 - `iOS 8+`
 - `Xcode8`
 
-- `Swift3` is supported on older branches/pods.
+### Support for older version(s)
+- `Swift3` is supported on older branches/pods. Use pod version `0.1.5`.
+
+Note that `0.2.x` contains breaking changes if you update from `0.1.x`
 
 ## Installation
 
