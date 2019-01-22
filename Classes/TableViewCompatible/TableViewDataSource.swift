@@ -52,7 +52,7 @@ open class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
         return self[indexPath].movable
     }
     
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         // If you need to update a deeper model, ie. a database or similar, or you need to support insertion, you probably want to provide your own implementation of this function.
         
