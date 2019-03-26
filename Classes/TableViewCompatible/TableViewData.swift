@@ -29,7 +29,7 @@ public protocol TableViewData {
 // Default implementations
 public extension TableViewData {
     
-    public subscript(indexPath: IndexPath) -> TableViewCompatible {
+    subscript(indexPath: IndexPath) -> TableViewCompatible {
         get {
             return sections[indexPath.section].items[indexPath.row]
         }
@@ -39,34 +39,34 @@ public extension TableViewData {
         }
     }
     
-    public func numberOfSections() -> Int {
+    func numberOfSections() -> Int {
         return sections.count
     }
     
-    public func numberOfRowsInSection(section: Int) -> Int {
+    func numberOfRowsInSection(section: Int) -> Int {
         return sections[section].items.count
     }
     
-    public func titleForHeaderInSection(section: Int) -> String? {
+    func titleForHeaderInSection(section: Int) -> String? {
         return sections[section].headerTitle
     }
     
-    public func titleForFooterInSection(section: Int) -> String? {
+    func titleForFooterInSection(section: Int) -> String? {
         return sections[section].footerTitle
     }
     
-    public func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         let model = self[indexPath]
         return model.cellForTableView(tableView: tableView, atIndexPath: indexPath)
     }
     
-    public func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+    func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             self[indexPath].prefetch()
         }
     }
     
-    public func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+    func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if indexPath.section < self.sections.count && indexPath.row < self.sections[indexPath.section].items.count {
                 self[indexPath].cancelPrefetch()

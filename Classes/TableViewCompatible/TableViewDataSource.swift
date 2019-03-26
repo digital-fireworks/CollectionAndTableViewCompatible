@@ -65,6 +65,9 @@ open class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
         case .delete:
             deleteItem(atIndexPath: indexPath)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            // Ignoring all unknown
+            break
         }
     }
     

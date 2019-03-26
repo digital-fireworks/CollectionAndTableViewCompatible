@@ -24,15 +24,15 @@ public protocol CollectionAndTableViewCompatible {
 // Default implementations
 public extension CollectionAndTableViewCompatible {
     
-    public var editable: Bool {
+    var editable: Bool {
         return false
     }
     
-    public var movable: Bool {
+    var movable: Bool {
         return false
     }
     
-    public func prefetch() { }
-    public func cancelPrefetch() { }
+    func prefetch() { }
+    func cancelPrefetch() { }
     
 }
