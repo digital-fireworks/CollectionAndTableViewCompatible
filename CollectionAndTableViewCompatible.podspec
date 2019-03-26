@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CollectionAndTableViewCompatible'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'A set of Swift protocols and Xcode snippets that will make it easy to do clean UICollectionView and UITableView code.'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
