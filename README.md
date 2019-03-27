@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
 [![License](https://img.shields.io/cocoapods/l/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
 [![Platform](https://img.shields.io/cocoapods/p/CollectionAndTableViewCompatible.svg?style=flat)](http://cocoapods.org/pods/CollectionAndTableViewCompatible)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 CollectionAndTableViewCompatible provides the boilerplate code needed for writing UITableViewDataSource and UICollectionViewDataSource implementations. In fact, when using the classes provided here, in most cases you wont have to write these implementations at all.
 
