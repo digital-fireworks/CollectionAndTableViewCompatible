@@ -72,7 +72,9 @@ pod "CollectionAndTableViewCompatible"
 
 ### Carthage
 
-```jayway/CollectionAndTableViewCompatible```
+```ruby
+github "jayway/CollectionAndTableViewCompatible"
+```
 
 ## How to use
 
