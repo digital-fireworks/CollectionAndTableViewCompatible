@@ -37,7 +37,7 @@ extension TableViewController: UITableViewDelegate {
     }
     
     private func handleGenreSelection(model: GenreCellModel, forUser user: User) {
-        if let index = user.genres.index(of: model.genre) {
+        if let index = user.genres.firstIndex(of: model.genre) {
             user.genres.remove(at: index)
             model.selected = false
         } else {
