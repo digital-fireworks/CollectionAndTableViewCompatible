@@ -31,10 +31,6 @@ The main idea behind `CollectionAndTableViewCompatible` is to make the data mode
 
 Finally it provides a few other protocols that enables support for the display cycle of cells (`willDisplay` and `didEndDisplay`) and the new data source prefetching protocols (`UITableViewDataSourcePrefetching` and `UICollectionViewDataSourcePrefetching`).
 
-## Example project
-
-You can find an example project demonstrating the use of `CollectionAndTableViewCompatible` [here](https://github.com/jayway/CollectionAndTableViewCompatibleExample).
-
 ### CocoaPods
 If you are using CocoaPods you can run the example project by adding the pod (see below) and running `pod install` from the Example directory.
 
