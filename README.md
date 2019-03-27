@@ -70,6 +70,10 @@ it, simply add the following line to your Podfile:
 pod "CollectionAndTableViewCompatible"
 ```
 
+### Carthage
+
+```jayway/CollectionAndTableViewCompatible```
+
 ## How to use
 
 The project is designed to be used in a storyboard based application using prototype cells. For now, if you are using nibs or you are creating UI entirely in code you will have to manually register nibs or classes to you table/collection view.
