@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "CollectionAndTableViewCompatible",
+    swiftLanguageVersions: [.v4, .v4_2, .v5],
     platforms: [
         .iOS(.v9)
     ],
