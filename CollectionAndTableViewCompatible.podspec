@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Jimmie Jensen' => 'jimmie.jensen@jayway.com' }
   s.source           = { :git => 'https://github.com/jayway/CollectionAndTableViewCompatible.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.source_files = 'Classes/**/*'
   s.frameworks = 'UIKit'
 
