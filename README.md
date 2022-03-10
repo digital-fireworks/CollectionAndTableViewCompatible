@@ -47,6 +47,10 @@ Note that `0.2.x` contains breaking changes if you update from `0.1.x`
 
 ## Installation
 
+### Swift Package Manager 
+
+SPM is supported from version 0.2.5. Specify location: `https://github.com/jayway/CollectionAndTableViewCompatible`
+
 ### Git submodule
 
 Add this project as a git submodule by running the following command from the root of you existing git repo:
