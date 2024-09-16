@@ -17,7 +17,7 @@ open class TableViewDataSource: NSObject, TableViewData, UITableViewDataSource {
         self.tableView = tableView
         super.init()
         tableView.dataSource = self
-        if #available(iOS 10.0, *) {
+        if #available(iOS 10.0, tvOS 10.0, *) {
             tableView.prefetchDataSource = self
         }
     }
