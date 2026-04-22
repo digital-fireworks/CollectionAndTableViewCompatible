@@ -14,36 +14,24 @@ class GenreTableViewCell: UITableViewCell, Configurable {
     @IBOutlet weak var label: UILabel!
     
     var model: GenreCellModel?
-
-    private var observation: NSKeyValueObservation?
-    
-//    override func willDisplay() {
-//        print(#function)
-//    }
-//    
-//    override func didEndDisplay() {
-//        print(#function)
-//    }
+    private lazy var favoriteIndicatorView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
+        imageView.tintColor = .systemYellow
+        return imageView
+    }()
     
     func configure(withModel model: GenreCellModel) {
 
         self.model = model
         self.label.text = model.genre.description
-
-        // Remove previous observation
-        self.observation = nil
-
-        self.updateCheckmark()
-
-        self.observation = model.observe(\.selected) { [unowned self] (model, change) in
-            self.updateCheckmark()
-        }
+        self.updateAccessory()
 
     }
     
-    private func updateCheckmark() {
+    private func updateAccessory() {
         if let model = self.model {
-            self.accessoryType = model.selected ? .checkmark : .none
+            self.accessoryType = .none
+            self.accessoryView = model.showsFavoriteIndicator ? favoriteIndicatorView : nil
         }
     }
 }

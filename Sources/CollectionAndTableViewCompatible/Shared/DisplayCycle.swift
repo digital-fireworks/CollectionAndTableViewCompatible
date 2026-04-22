@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 public protocol DisplayCycle {
     
     func willDisplay()

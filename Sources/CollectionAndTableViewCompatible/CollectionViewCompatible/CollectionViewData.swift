@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 public protocol CollectionViewData {
     
     var sections: [CollectionViewSection] { get set }
@@ -34,8 +35,7 @@ public extension CollectionViewData {
             return sections[indexPath.section].items[indexPath.row]
         }
         set {
-            var items = sections[indexPath.section].items
-            items.insert(newValue, at: indexPath.row)
+            sections[indexPath.section].items[indexPath.row] = newValue
         }
     }
     
@@ -78,4 +78,70 @@ public extension CollectionViewData {
         }
     }
     
+}
+
+@MainActor
+public protocol CollectionViewItemData {
+
+    var sections: [CollectionViewItemSection] { get set }
+
+    subscript(indexPath: IndexPath) -> CollectionViewItem { get set }
+
+    func numberOfSections() -> Int
+    func numberOfItemsInSection(section: Int) -> Int
+
+    func cell(forCollectionView collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> UICollectionViewCell
+
+    func canMoveItem(atIndexPath indexPath: IndexPath) -> Bool
+    func moveItem(atIndexPath sourceIndexPath: IndexPath, toIndexPath destinationIndexPath: IndexPath)
+
+    func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath])
+    func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath])
+}
+
+public extension CollectionViewItemData {
+
+    subscript(indexPath: IndexPath) -> CollectionViewItem {
+        get {
+            sections[indexPath.section].items[indexPath.row]
+        }
+        set {
+            sections[indexPath.section].items[indexPath.row] = newValue
+        }
+    }
+
+    func numberOfSections() -> Int {
+        sections.count
+    }
+
+    func numberOfItemsInSection(section: Int) -> Int {
+        sections[section].items.count
+    }
+
+    func cell(forCollectionView collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        self[indexPath].cell(for: collectionView, at: indexPath)
+    }
+
+    func canMoveItem(atIndexPath indexPath: IndexPath) -> Bool {
+        self[indexPath].movable
+    }
+
+    func moveItem(atIndexPath sourceIndexPath: IndexPath, toIndexPath destinationIndexPath: IndexPath) {
+        let item = self.sections[sourceIndexPath.section].items.remove(at: sourceIndexPath.row)
+        self.sections[destinationIndexPath.section].items.insert(item, at: destinationIndexPath.row)
+    }
+
+    func prefetchObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            self[indexPath].prefetch()
+        }
+    }
+
+    func cancelPrefetchingObjectsAtIndexPaths(indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if indexPath.section < self.sections.count && indexPath.row < self.sections[indexPath.section].items.count {
+                self[indexPath].cancelPrefetch()
+            }
+        }
+    }
 }

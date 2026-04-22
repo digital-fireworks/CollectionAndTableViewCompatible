@@ -8,85 +8,37 @@
 
 import Foundation
 
-enum Genre {
-    case Alternative
-    case Country
-    case Pop
-    case World
-    case Blues
-    case SingerSongwriter
-    case Metal
-    case Reggae
-    case SceneScreen
-    case Rock
-    case Classic
-    case Jazz
-    case HipHopRap
-    case RnBSoul
-    case Funk
-    case Dance
-    case Electronica
-}
+struct Genre: Hashable, CustomStringConvertible {
 
-extension Genre: CustomStringConvertible {
+    let name: String
+
+    init(_ name: String) {
+        self.name = name
+    }
+
     static var allGenres: [Genre] {
-        return [
-            Alternative,
-            Country,
-            Pop,
-            World,
-            Blues,
-            SingerSongwriter,
-            Metal,
-            Reggae,
-            SceneScreen,
-            Rock,
-            Classic,
-            Jazz,
-            HipHopRap,
-            RnBSoul,
-            Funk,
-            Dance,
-            Electronica
+        [
+            Genre("Alternative"),
+            Genre("Country"),
+            Genre("Pop"),
+            Genre("World"),
+            Genre("Blues"),
+            Genre("Singer Songwriter"),
+            Genre("Metal"),
+            Genre("Reggae"),
+            Genre("Scene & Screen"),
+            Genre("Rock"),
+            Genre("Classic"),
+            Genre("Jazz"),
+            Genre("HipHop & Rap"),
+            Genre("R&B and Soul"),
+            Genre("Funk"),
+            Genre("Dance"),
+            Genre("Electronica"),
         ]
     }
-    
+
     var description: String {
-        switch self {
-        case .Alternative:
-            return "Alternative"
-        case .Country:
-            return "Country"
-        case .Pop:
-            return "Pop"
-        case .World:
-            return "World"
-        case .Blues:
-            return "Blues"
-        case .SingerSongwriter:
-            return "Singer Songwriter"
-        case .Metal:
-            return "Metal"
-        case .Reggae:
-            return "Reggae"
-        case .SceneScreen:
-            return "Scene & Screen"
-        case .Rock:
-            return "Rock"
-        case .Classic:
-            return "Classic"
-        case .Jazz:
-            return "Jazz"
-        case .HipHopRap:
-            return "HipHop & Rap"
-        case .RnBSoul:
-            return "R&B and Soul"
-        case .Funk:
-            return "Funk"
-        case .Dance:
-            return "Dance"
-        case .Electronica:
-            return "Electronica"
-        }
+        name
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 public protocol CollectionAndTableViewCompatible {
     
     var reuseIdentifier: String { get }
